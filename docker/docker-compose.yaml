@@ -1,0 +1,30 @@
+version: '3.7'
+services:
+  flask-demo:
+    build:
+      context: ..
+      dockerfile: build/Dockerfile
+    image: flask-demo:v1
+    container_name: flask-demo-container
+    ports:
+      - "5000:8000"
+    restart: always
+    privileged: true
+    env_file:
+      - flask-demo.env
+    volumes:
+      - ./logs/flask-demo:/app/logs   
+      - ../run:/app/run   
+    healthcheck:
+      test: [ "CMD-SHELL", "curl --silent --fail localhost:8000/health | grep -q 'ok' || exit 1" ]
+      interval: 30s
+      retries: 3
+      start_period: 10s
+      timeout: 3s
+
+
+networks:
+  default:
+    name: flask-demo
+
+

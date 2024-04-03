@@ -1,0 +1,9 @@
+.idea/
+.vscode/
+*.log
+logs/
+*.pyc
+__pycache__/
+*.env
+./tests
+storage/

@@ -32,7 +32,7 @@ tail -f logs/flask-demo/app.log
 # 进入容器
 docker exec -it flask-demo-container bash
 # 创建管理员账号 按照需要设置对应的参数，下面是一个示例
-flask create-admin --name admin --password admin123 --token ka-admin123
+flask create-admin --name admin --password admin123 --token admin123
 ```
 
 ## 本地启动说明
@@ -118,8 +118,10 @@ flask create-admin --name admin --password admin123
 |  ├── fields         # 接口字段目录
 |  ├── migrations     # 数据库迁移目录
 |  ├── models         # 数据库model目录
+|  ├── schedule       # 定时任务相关目录
 |  ├── services       # 业务逻辑目录
-|  └── utils          # 工具类目录
+|  ├── tasks          # 后台任务相关目录
+|  └── utils          # 工具目录
 └── tests             # 测试目录
 
 ```

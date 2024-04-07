@@ -113,7 +113,6 @@ flask create-admin --name admin --password admin123
 |  ├── common         # 公共目录
 |  ├── controllers    # 接口相关目录
 |  ├── core           # 核心组件目录
-|  ├── docker         # docker启动脚本目录
 |  ├── extensions     # flask 扩展目录
 |  ├── fields         # 接口字段目录
 |  ├── migrations     # 数据库迁移目录
